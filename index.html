@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стрелялка</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="main-menu">
+        <h1>Главное меню</h1>
+        <button id="menu-start-btn">Старт игры</button>
+        <button id="about-btn">О игре</button>
+        <button id="settings-btn">Настройки</button>
+    </div>
+    <div id="about-modal" style="display:none; position:fixed; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); color:white; z-index:1000; justify-content:center; align-items:center; flex-direction:column;">
+        <div style="background:#222; padding:30px; border-radius:10px; max-width:500px; margin:auto; text-align:center;">
+            <h2>О игре</h2>
+            <p>Это 2D-шутер с видом сверху. Управляйте персонажем, избегайте врагов, стреляйте и набирайте очки!<br>WASD/Стрелки — движение, Пробел — стрельба, F — полноэкранный режим.<br> Разработчик: Мурсалов Зухраб</p>
+            <button id="about-back-btn">Назад</button>
+        </div>
+    </div>
+    <div id="settings-modal" style="display:none; position:fixed; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); color:white; z-index:1000; justify-content:center; align-items:center; flex-direction:column;">
+        <div style="background:#222; padding:30px; border-radius:10px; max-width:500px; margin:auto; text-align:center;">
+            <h2>Настройки</h2>
+            <label style="font-size:1.2em;"><input type="checkbox" id="mute-sound-checkbox" style="transform:scale(1.5); margin-right:10px;"> Отключить звук</label><br>
+            <button id="settings-back-btn" style="margin-top:20px;">Назад</button>
+        </div>
+    </div>
+    <div id="game-container" style="display:none;">
+        <canvas id="game-canvas"></canvas>
+        <div id="score">Счёт: 0</div>
+        <div id="lives">Жизни: 3</div>
+        <button id="start-btn">Начать игру</button>
+        <div id="pause-overlay">Пауза</div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
